@@ -1,0 +1,43 @@
+4.3 ACCESslNG AND MANIPULATlNG PleLs
+
+On Line 14 we manipulate the top-left Pixel in the im—
+age, which is located at coordinate (0,0j and Set it to have
+a Value of (0,  O,  255>. If we were reading this pixel value
+in RGB format, we would have a value of O for red, O for
+green, and 255 for blue, thus making it a Pure blue color.
+
+However, as l mentioned above, we need to take Special
+Care when working with OpenCV Our PixelS are actually
+stored in BGR format, not RGB format.
+
+We actually read this Pixel as 255 for red, 0 tor green, and
+0 for blue, making it a red Color, not a blue color.
+
+After setting the top-left Pixel to have a red Color on Line
+14, We then grab the Pixel value and print it back to Con-
+sole on Lines 15 and 16, just to demonstrate that we have
+indeed successfully changed the color of 出e Pixel.
+
+Accessing and Setting a single Pixel value is simple enough,
+but what if we wanted to use NanPy/s array slicing capa-
+bilities to access larger rectangular Portions of the irnage?
+The code below demonstrates how we can do dns:
+
+           
+
+Lisnng 1 ;: ge川ng-皿d_seInng~冽'
+
+I7 corner = innge[0:工Q0. 0：i。。]
+i8 Cv2.insh。"("Corne「", corner)
+Is
+
+z。 im釁se[。:】QQ. 。:1。。] = (Q, 255. O)
+
+z： cv2.imBho竇("UPdated" , image)
+23 cv2.H轟itKey(。>
+
+On line 17 we grab a 100 × 100 Pixel region ofthe irnage.
+In fact, this is the top—leit corner of the irnage! in order to
+grab chunks Of an irnage, NumPy expects we Provide four
+
+22

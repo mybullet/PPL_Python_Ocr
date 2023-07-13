@@ -1,3 +1,4 @@
+import os
 from tkinter import *
 from tkinter.filedialog import askopenfilename
 import scan
@@ -12,7 +13,7 @@ class Application(Frame):
         self.creatWidget()
 
     def creatWidget(self):
-        self.w1 = Text(self, width=80, heigh=40, bg='gray') # 宽度为80个字母(40个汉字)，高度为1个行高
+        self.w1 = Text(self, width=80, heigh=40, bg='lightblue') # 宽度为80个字母(40个汉字)，高度为1个行高
         self.w1.pack()
 
         # 创建诸多按钮，command表示按下按钮后执行的事件（方法）
@@ -22,6 +23,10 @@ class Application(Frame):
     # 插入信息
     def selectImage(self):
         # 在当前可执行路径下选择图片
+
+        if not os.path.exists('./Images'):
+            os.mkdir('./Images')
+
         self.file_path = askopenfilename(title='Select an image to be OCR', filetypes=[('All Files', '*')],
                                     initialdir='./Images/')
         if self.file_path == '':
