@@ -193,7 +193,7 @@ def convertImage2String(image_name):
 
 		file_name = "{}.png".format("./Ocr_Preprocess/" + output_name)
 		cv2.imwrite(file_name, final) # ocr需要numpy数据，所以需要转存
-		recognizeImageAndOutput(file_name, Language.chi_all,  "./Ocr_Results/{}.txt".format(output_name)) # ocr
+		recognizeImageAndOutput(file_name, Language.chi_sim,  "./Ocr_Results/{}.txt".format(output_name)) # ocr
 		return output_name
 	except:
 		createText(output_name, traceback.format_exc())

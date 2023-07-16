@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "Y:\LocalRepository\PPL_Python_Ocr\Scan\scan.py", line 196, in convertImage2String
+    recognizeImageAndOutput(file_name, Language.chi_all,  "./Ocr_Results/{}.txt".format(output_name)) # ocr
+  File "Y:\LocalRepository\PPL_Python_Ocr\Scan\scan.py", line 105, in recognizeImageAndOutput
+    tesseract_ocr_tool, tesseract_ocr_lang = setLangForTesseract(lang_type)
+  File "Y:\LocalRepository\PPL_Python_Ocr\Scan\scan.py", line 94, in setLangForTesseract
+    langs = used_ocr_tool.get_available_languages()
+UnboundLocalError: local variable 'used_ocr_tool' referenced before assignment
